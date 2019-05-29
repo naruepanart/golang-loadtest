@@ -17,7 +17,7 @@ func timer() func() time.Duration {
 
 func callAPI(d int) {
 	t := timer()
-	resp, err := http.Get("https://www.suksan-shop.com/")
+	resp, err := http.Get("http://softwarekonjon.netlify.com")
 	if err != nil {
 		log.Println(err)
 		return
