@@ -1,1 +1,1 @@
-# backend-with-echo
+# go-loadtest
