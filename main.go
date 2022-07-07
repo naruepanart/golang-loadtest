@@ -17,7 +17,7 @@ func timer() func() time.Duration {
 
 func callAPI(d int) {
 	t := timer()
-	resp, err := http.Get("http://localhost:3000/v1/payments")
+	resp, err := http.Get("http://localhost:3000/v1/user")
 	if err != nil {
 		log.Println(err)
 		return
@@ -31,7 +31,7 @@ func main() {
 	t := timer()
 	wg := &sync.WaitGroup{}
 	semaphore := make(chan struct{}, 50)
-	for d := 0; d < 50_000; d++ {
+	for d := 0; d < 10_000; d++ {
 		d := d
 		semaphore <- struct{}{}
 		wg.Add(1)
